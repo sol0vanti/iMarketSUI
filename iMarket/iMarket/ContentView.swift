@@ -12,10 +12,28 @@ struct ContentView: View {
         NavigationView {
             Section {
                 Button(action: {
-                    
+                        
                 }, label: {
-                    Label("", systemImage: "globe.europe.africa")
+                    HStack {
+                        Image(systemName: "globe.europe.africa")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 25)
+                        Spacer()
+                        VStack(alignment: .leading) {
+                            Text("Оберіть магазин")
+                                .fontWeight(.bold)
+                            Text("Щоб бачити персональні пропозиції")
+                                .font(.system(size: 12))
+                        }
+                        Spacer()
+                        Image(systemName: "cross.fill")
+                    }
+                    .padding(.horizontal, 20)
                 })
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                .padding(.horizontal, 20)
             }
             .navigationTitle("Вітаємо в iMarket!")
             .toolbar {
